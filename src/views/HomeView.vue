@@ -23,10 +23,12 @@
               </li>
             </ul>
           </div>
+          
   
           <!-- Getting Started Card -->
           <div class="bg-gray-800/50 border border-gray-700 backdrop-blur-sm rounded-xl p-6">
             <h3 class="text-xl mb-6 text-white">Getting Started</h3>
+            
             <div class="space-y-6">
               <div class="space-y-4">
                 <div v-for="(step, index) in steps" :key="index" class="flex items-start text-gray-300">

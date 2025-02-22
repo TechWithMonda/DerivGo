@@ -7,15 +7,14 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="flex flex-col justify-center">
-        <h2 class="text-2xl font-semibold text-blue-500">What is TheBlackSamurau?</h2>
+        <h2 class="text-2xl font-semibold text-blue-500">What is TheBlackSamurai?</h2>
         <p class="mt-4 text-gray-700">
          This is a powerfull web app designed for intergrating and hosting Ai bots which can be used in deriv to automate trades and give guides
          ,With a powerfull AI sytems traders can never worry about incurring consective losses ,our bots are well trained by certified trades and best of all its free
         </p>
       </div>
       <div>
-        <img src="https://source.unsplash.com/500x300/?technology,finance" alt="About Deriv" class="rounded-lg shadow-lg w-full" />
-      </div>
+        <img src="/samurai.png" alt="About Deriv" class="rounded-lg shadow-lg w-full" />      </div>
     </div>
 
     <div class="mt-12 bg-gray-100 p-6 rounded-lg shadow-md">
