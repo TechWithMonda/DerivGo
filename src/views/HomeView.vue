@@ -198,100 +198,144 @@
   </template>
   
   <script>
-  export default {
-    name: 'DerivRobotStore',
-    data() {
-      return {
-        mainFeatures: [
-          "Advanced algorithmic trading strategies",
-          "Real-time market analysis and execution",
-          "Comprehensive risk management systems",
-          "24/7 automated operation capability"
-        ],
-        steps: [
-          "Create your Deriv trading account",
-          "Fund your account with your preferred method",
-          "Select and download your trading bot",
-          "Start automated trading with our setup guide"
-        ],
-        robots: [
-          {
-            id: 1,
-            name: "Quantum Trader AI",
-            description: "Next-gen trading bot with quantum-inspired algorithms",
-            price: "355.99",
-            features: ["Self-optimizing", "24/7 Operation", "Risk Management"],
-            icon: 'ZapIcon',
-            iconColor: 'text-blue-500',
-            fileUrl: '/robots/quantum-trader.zip',
-            fileName: 'quantum-trader-ai.zip',
-            isPurchased: false
-          },
-          {
-            id: 2,
-            name: "Neural Network Bot",
-            description: "Deep learning powered trading automation",
-            price: "199.99",
-            features: ["Pattern Recognition", "Adaptive Learning", "Multi-asset Trading"],
-            icon: 'BotIcon',
-            iconColor: 'text-purple-500',
-            fileUrl: '/robots/neural-network.zip',
-            fileName: 'neural-network-bot.zip',
-            isPurchased: false
-          },
-          {
-            id: 3,
-            name: "HyperTrader Pro",
-            description: "High-frequency trading bot with advanced analytics",
-            price: "249.99",
-            features: ["Microsecond Execution", "Market Analysis", "Custom Strategies"],
-            icon: 'TrendingUpIcon',
-            iconColor: 'text-green-500',
-            fileUrl: '/robots/hypertrader.zip',
-            fileName: 'hypertrader-pro.zip',
-            isPurchased: false
-          }
-        ],
-        showPurchaseModal: false,
-        selectedRobot: null,
-        paymentDetails: {
-          cardNumber: '',
-          expiry: '',
-          cvv: ''
+
+export default {
+  name: 'DerivRobotStore',
+  data() {
+    return {
+      mainFeatures: [
+        "Advanced algorithmic trading strategies",
+        "Real-time market analysis and execution",
+        "Comprehensive risk management systems",
+        "24/7 automated operation capability"
+      ],
+      steps: [
+        "Create your Deriv trading account",
+        "Fund your account with your preferred method",
+        "Select and download your trading bot",
+        "Start automated trading with our setup guide"
+      ],
+      robots: [
+        {
+          id: 1,
+          name: "Quantum Trader AI",
+          description: "Next-gen trading bot with quantum-inspired algorithms",
+          price: "355.99",
+          features: ["Self-optimizing", "24/7 Operation", "Risk Management"],
+          icon: 'ZapIcon',
+          iconColor: 'text-blue-500',
+          fileUrl: '/robots/Old Barriers Accumulator Master.xml',
+          fileName: 'Old Barriers Accumulator Master.xml',
+          isPurchased: false
+        },
+        {
+          id: 2,
+          name: "Neural Network Bot",
+          description: "Deep learning powered trading automation",
+          price: "199.99",
+          features: ["Pattern Recognition", "Adaptive Learning", "Multi-asset Trading"],
+          icon: 'BotIcon',
+          iconColor: 'text-purple-500',
+          fileUrl: '/robots/Old Barriers Accumulator Master.xml',
+          fileName: 'Old Barriers Accumulator Master.xml',
+          isPurchased: false
+        },
+        {
+          id: 3,
+          name: "HyperTrader Pro",
+          description: "High-frequency trading bot with advanced analytics",
+          price: "249.99",
+          features: ["Microsecond Execution", "Market Analysis", "Custom Strategies"],
+          icon: 'TrendingUpIcon',
+          iconColor: 'text-green-500',
+          fileUrl: '/robots/Old Barriers Accumulator Master.xml',
+          fileName: 'Old Barriers Accumulator Master.xml',
+          isPurchased: false
         }
+      ],
+      showPurchaseModal: false,
+      selectedRobot: null,
+      paymentDetails: {
+        method: '',
+        cardNumber: '',
+        expiry: '',
+        cvv: '',
+        mpesaNumber: ''
+      }
+    };
+  },
+  methods: {
+    handleDownload(robot, event) {
+      if (!robot.isPurchased) {
+        event.preventDefault();
+        this.selectedRobot = robot;
+        this.showPurchaseModal = true;
+      } else {
+        // Allow immediate download if purchased
+        this.downloadFile(robot);
       }
     },
-    methods: {
-      handleDownload(robot, event) {
-        if (!robot.isPurchased) {
-          event.preventDefault();
-          this.selectedRobot = robot;
-          this.showPurchaseModal = true;
+
+    async processPurchase() {
+      try {
+        if (!this.selectedRobot) {
+          console.error("Purchase failed: No robot selected.");
+          return;
         }
-      },
-      async processPurchase() {
-        try {
-          await new Promise(resolve => setTimeout(resolve, 1500));
-          
-          const robot = this.robots.find(r => r.id === this.selectedRobot.id);
-          if (robot) {
-            robot.isPurchased = true;
-          }
-          
-          this.showPurchaseModal = false;
-          this.selectedRobot = null;
-          this.paymentDetails = { cardNumber: '', expiry: '', cvv: '' };
-          
-          const link = document.createElement('a');
-          link.href = robot.fileUrl;
-          link.download = robot.fileName;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } catch (error) {
-          console.error('Purchase failed:', error);
+
+        // Simulate payment processing
+        if (this.paymentDetails.method === 'card') {
+          await this.processCardPayment();
+        } else if (this.paymentDetails.method === 'mpesa') {
+          await this.processMpesaPayment();
+        } else {
+          console.error("Purchase failed: No payment method selected.");
+          return;
         }
+
+        // Find the robot
+        const robot = this.robots.find(r => r.id === this.selectedRobot.id);
+        if (!robot) {
+          console.error("Purchase failed: Robot not found in the list.");
+          return;
+        }
+
+        // Mark as purchased
+        robot.isPurchased = true;
+        this.showPurchaseModal = false;
+
+        // Download file
+        this.downloadFile(robot);
+
+        // Reset payment details
+        this.selectedRobot = null;
+        this.paymentDetails = { method: '', cardNumber: '', expiry: '', cvv: '', mpesaNumber: '' };
+
+      } catch (error) {
+        console.error("Purchase failed:", error);
       }
+    },
+
+    async processCardPayment() {
+      console.log("Processing card payment...");
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      console.log("Card payment successful!");
+    },
+
+    async processMpesaPayment() {
+      console.log("Processing M-Pesa payment...");
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      console.log("M-Pesa payment successful!");
+    },
+
+    downloadFile(robot) {
+      const link = document.createElement('a');
+      link.href = robot.fileUrl;
+      link.download = robot.fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
-  };
-  </script>
+  }
+};
+</script>
