@@ -73,7 +73,7 @@ const isOpen = ref(false)
 const navItems = [
   { route: '/', text: 'Home', icon: 'bi bi-house' },
   { route: '/Locator', text: 'Free AI Robots', icon: 'bi bi-geo-alt-fill' },
-  { route: '/premium', text: 'Premium DeepSeek Robots', icon: 'bi bi-headset' },
+  { route: '/Premium', text: 'Premium DeepSeek Robots', icon: 'bi bi-headset' },
   { route: '/guide', text: 'Starting Guides', icon: 'bi bi-journal-plus' },
   { route: '/account', text: 'Open a Deriv Account', icon: 'bi bi-bell' },
   { route: '/about', text: 'About Us', icon: 'bi bi-person-circle' }

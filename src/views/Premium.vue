@@ -4,58 +4,7 @@
       <div class="max-w-6xl mx-auto mb-20">
         <div class="text-center mb-16">
           <h1 class="text-3xl font-bold mb-6">
-            Welcome To The BlackSamurai Advanced Trading Artificial Inteligence
-          </h1>
-          <p class="text-gray-400 text-lg max-w-3xl mx-auto">
-            Experience the next evolution of trading with our sophisticated algorithmic solutions, 
-            designed exclusively for Deriv markets
-          </p>
-        </div>
-  
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <!-- Features Card -->
-          <div class="bg-gray-800/50 border border-gray-700 backdrop-blur-sm rounded-xl p-6">
-            <h3 class="text-xl mb-6 text-white">Why Choose Our Bots</h3>
-            <ul class="space-y-4">
-              <li v-for="feature in mainFeatures" :key="feature" class="flex items-center text-gray-300">
-                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                {{ feature }}
-              </li>
-            </ul>
-          </div>
-          
-  
-          <!-- Getting Started Card -->
-          <div class="bg-gray-800/50 border border-gray-700 backdrop-blur-sm rounded-xl p-6">
-            <h3 class="text-xl mb-6 text-white">Getting Started</h3>
-            
-            <div class="space-y-6">
-              <div class="space-y-4">
-                <div v-for="(step, index) in steps" :key="index" class="flex items-start text-gray-300">
-                  <span class="font-bold mr-2">{{ index + 1 }}.</span>
-                  {{ step }}
-                </div>
-              </div>
-              
-              <a
-                href="https://deriv.com/signup/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
-              >
-                Create Deriv Account
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="max-w-6xl mx-auto mb-20">
-        <div class="text-center mb-16">
-          <h1 class="text-3xl font-bold mb-6">
-            Featured and Exclusive Bots
+            Advanced Trading Automation
           </h1>
           <p class="text-gray-400 text-lg max-w-3xl mx-auto">
             Experience the next evolution of trading with our sophisticated algorithmic solutions, 

@@ -11,11 +11,14 @@
             <p class="text-gray-400">
               Revolutionizing automated trading with cutting-edge AI technology.
             </p>
+            <p class="text-gray-400">You can contact me:
+             samwelmonda48@gmail.com
+            </p>
             <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
                 <i class="bi bi-telegram text-xl"></i>
               </a>
-              <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="http://youtube.com/techwithmonda" class="text-gray-400 hover:text-blue-400 transition-colors">
                 <i class="bi bi-youtube text-xl"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
