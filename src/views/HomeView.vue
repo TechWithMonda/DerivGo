@@ -118,60 +118,82 @@
   
       <!-- Purchase Modal -->
       <div v-if="showPurchaseModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-        <div class="bg-gray-800 p-6 rounded-xl max-w-md w-full">
-          <h3 class="text-xl font-bold text-white mb-4">Purchase {{ selectedRobot?.name }}</h3>
-          <p class="text-gray-300 mb-4">Complete your purchase to download this trading bot.</p>
-          
-          <form @submit.prevent="processPurchase" class="space-y-4">
-            <div>
-              <label class="block text-gray-300 mb-2">Card Number</label>
-              <input 
-                v-model="paymentDetails.cardNumber"
-                type="text"
-                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500"
-                placeholder="1234 5678 9012 3456"
-              >
-            </div>
-            
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-gray-300 mb-2">Expiry Date</label>
-                <input 
-                  v-model="paymentDetails.expiry"
-                  type="text"
-                  class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500"
-                  placeholder="MM/YY"
-                >
-              </div>
-              <div>
-                <label class="block text-gray-300 mb-2">CVV</label>
-                <input 
-                  v-model="paymentDetails.cvv"
-                  type="text"
-                  class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500"
-                  placeholder="123"
-                >
-              </div>
-            </div>
-  
-            <div class="flex justify-end space-x-4 mt-6">
-              <button 
-                type="button"
-                @click="showPurchaseModal = false"
-                class="px-4 py-2 text-gray-300 hover:text-white"
-              >
-                Cancel
-              </button>
-              <button 
-                type="submit"
-                class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:opacity-90"
-              >
-                Pay Ksh{{ selectedRobot?.price }}
-              </button>
-            </div>
-          </form>
+    <div class="bg-gray-900 p-6 rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 scale-95 hover:scale-100">
+      <h3 class="text-2xl font-bold text-white mb-4 text-center">
+        Purchase {{ selectedRobot?.name }}
+      </h3>
+      <p class="text-gray-400 text-center mb-6">
+        Complete your purchase to download this trading bot.
+      </p>
+
+      <form @submit.prevent="processPurchase" class="space-y-4">
+        <div>
+          <label class="block text-gray-400 mb-2">Payment Method</label>
+          <select v-model="paymentDetails.method" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+            <option value="card">Credit/Debit Card</option>
+            <option value="mpesa">M-Pesa</option>
+          </select>
         </div>
-      </div>
+        
+        <div v-if="paymentDetails.method === 'card'">
+          <label class="block text-gray-400 mb-2">Card Number</label>
+          <input 
+            v-model="paymentDetails.cardNumber"
+            type="text"
+            class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+            placeholder="1234 5678 9012 3456"
+          >
+          
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <label class="block text-gray-400 mb-2">Expiry Date</label>
+              <input 
+                v-model="paymentDetails.expiry"
+                type="text"
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                placeholder="MM/YY"
+              >
+            </div>
+            <div>
+              <label class="block text-gray-400 mb-2">CVV</label>
+              <input 
+                v-model="paymentDetails.cvv"
+                type="text"
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                placeholder="123"
+              >
+            </div>
+          </div>
+        </div>
+
+        <div v-if="paymentDetails.method === 'mpesa'">
+          <label class="block text-gray-400 mb-2">M-Pesa Phone Number</label>
+          <input 
+            v-model="paymentDetails.mpesaNumber"
+            type="text"
+            class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
+            placeholder="07XXXXXXXX"
+          >
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+          <button 
+            type="button"
+            @click="showPurchaseModal = false"
+            class="px-4 py-2 text-gray-300 hover:text-white transition duration-200"
+          >
+            Cancel
+          </button>
+          <button 
+            type="submit"
+            class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:opacity-90 transition duration-300 shadow-lg"
+          >
+            Pay Ksh{{ selectedRobot?.price }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
     </div>
   </template>
   
