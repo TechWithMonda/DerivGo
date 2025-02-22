@@ -18,7 +18,7 @@
               <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
                 <i class="bi bi-telegram text-xl"></i>
               </a>
-              <a href="http://youtube.com/techwithmonda" class="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.youtube.com/@TechWithMonda" class="text-gray-400 hover:text-blue-400 transition-colors">
                 <i class="bi bi-youtube text-xl"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
