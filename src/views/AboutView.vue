@@ -7,11 +7,10 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="flex flex-col justify-center">
-        <h2 class="text-2xl font-semibold text-blue-500">What is Deriv?</h2>
+        <h2 class="text-2xl font-semibold text-blue-500">What is TheBlackSamurau?</h2>
         <p class="mt-4 text-gray-700">
-          Deriv is a powerful web application designed to help traders store, manage, and share
-          **trading bots** and **guides** with ease. Whether you are a beginner or an experienced trader,
-          Deriv provides a structured way to access and utilize trading automation tools.
+         This is a powerfull web app designed for intergrating and hosting Ai bots which can be used in deriv to automate trades and give guides
+         ,With a powerfull AI sytems traders can never worry about incurring consective losses ,our bots are well trained by certified trades and best of all its free
         </p>
       </div>
       <div>
