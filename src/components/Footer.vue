@@ -35,13 +35,13 @@
                 <router-link to="/" class="text-gray-400 hover:text-blue-400 transition-colors">Home</router-link>
               </li>
               <li>
-                <router-link to="/Locator" class="text-gray-400 hover:text-blue-400 transition-colors">Free AI Robots</router-link>
+                <router-link to="/freebots" class="text-gray-400 hover:text-blue-400 transition-colors">Free AI Robots</router-link>
               </li>
               <li>
                 <router-link to="/premium" class="text-gray-400 hover:text-blue-400 transition-colors">Premium Robots</router-link>
               </li>
               <li>
-                <router-link to="/guides" class="text-gray-400 hover:text-blue-400 transition-colors">Trading Guides</router-link>
+                <router-link to="/Guide" class="text-gray-400 hover:text-blue-400 transition-colors">Trading Guides</router-link>
               </li>
             </ul>
           </div>
@@ -57,7 +57,7 @@
                 <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">API Reference</a>
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Support Center</a>
+                <a href="mailto:samuelmonda@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors">Support Center</a>
               </li>
               <li>
                 <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Trading Academy</a>
@@ -93,9 +93,8 @@
               © {{ new Date().getFullYear() }} TheBlackSamurai. All rights reserved.
             </p>
             <div class="flex space-x-6">
-              <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a>
-              <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a>
-              <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Cookie Policy</a>
+              <a href="policy" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a>
+              <a href="policy" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
@@ -116,7 +115,5 @@
   </script>
   
   <style scoped>
-  .bg-clip-text {
-    -webkit-background-clip: text;
-  }
+
   </style>

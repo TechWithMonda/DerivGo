@@ -34,6 +34,22 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Premium.vue'),
     },
+    {
+      path: '/freebots',
+      name: 'freebots',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/freebots.vue'),
+    },
+    {
+      path: '/policy',
+      name: 'policy',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/policy.vue'),
+    },
   ],
 })
 
