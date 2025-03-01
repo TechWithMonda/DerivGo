@@ -1,3 +1,12 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9S98390Y5M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9S98390Y5M');
+</script>
 <template>
   <div class="about-page container mx-auto p-6 text-gray-800">
     <div class="text-center mb-10">

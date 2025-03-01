@@ -1,3 +1,12 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9S98390Y5M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9S98390Y5M');
+</script>
 <template>
   <nav class="bg-gradient-to-r from-gray-900 to-gray-800 shadow-lg border-b border-gray-700/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
