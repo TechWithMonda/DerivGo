@@ -1,12 +1,6 @@
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9S98390Y5M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-9S98390Y5M');
-</script>
+
 <template>
     <div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8">
       <!-- Header Section -->
