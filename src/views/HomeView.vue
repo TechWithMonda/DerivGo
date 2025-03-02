@@ -1,12 +1,5 @@
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9S98390Y5M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-9S98390Y5M');
-</script>
 <template>
   <div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8">
     <!-- Header Section -->
@@ -56,6 +49,29 @@
             </a>
           </div>
         </div>
+        <div class="bg-gray-800/50 border border-gray-700 backdrop-blur-sm rounded-xl p-6">
+          <h3 class="text-xl mb-6 text-white">Getting Started</h3>
+          <div class="space-y-6">
+            <div class="space-y-4">
+              <div v-for="(step, index) in steps" :key="index" class="flex items-start text-gray-300">
+                <span class="font-bold mr-2">{{ index + 1 }}.</span>
+                {{ step }}
+              </div>
+            </div>
+            <a
+              href="deposit"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Deposit and Withdraw Fast and Secure
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
       </div>
     </div>
 
