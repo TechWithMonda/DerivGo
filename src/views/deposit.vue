@@ -1,3 +1,4 @@
+ing may be inconsistent from source
 <template>
   <div class="app-wrapper">
     <nav class="navbar">
@@ -5,7 +6,10 @@
         <i class="fas fa-exchange-alt"></i>
         E-Transfer App
       </div>
-      <ul class="navbar-menu">
+      <button class="menu-toggle" @click="toggleMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="navbar-menu" :class="{ 'active': menuOpen }">
         <li class="navbar-item">
           <a href="#" @click.prevent="navigateTo('deposit')">
             <i class="fas fa-arrow-down"></i> Deposit
@@ -28,7 +32,7 @@
         </li>
         <li class="navbar-item">
           <a href="createaccount">
-            <i class="fas fa-sign-out-alt"></i> logout
+            <i class="fas fa-sign-out-alt"></i> Logout
           </a>
         </li>
       </ul>
@@ -203,10 +207,18 @@ export default {
       depositPhone: '',
       withdrawAmount: 0,
       withdrawPhone: '',
-      transactions: []
+      transactions: [],
+      menuOpen: false
     };
+   
   },
   methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+    },
+    navigateTo(route) {
+      alert(`Navigating to ${route}`);
+    },
     navigateTo(route) {
       // This would normally use vue-router
       // For now, we'll just show a message
@@ -258,6 +270,7 @@ export default {
 
 <style scoped>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 
 * {
   box-sizing: border-box;
@@ -474,4 +487,93 @@ export default {
 
 .input-group input:focus {
   outline: none;}
+
+  
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #f3f4f6, #ffffff);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.navbar-brand i {
+  margin-right: 0.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-item a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.navbar-item a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-item a i {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-menu.active {
+    display: flex;
+  }
+  .navbar-item {
+    text-align: center;
+  }
+}
   </style>
