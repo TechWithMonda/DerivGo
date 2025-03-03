@@ -10,6 +10,7 @@ const route = useRoute()
   <NavBar v-if="route.meta.showHeaderFooter !== false" />
   <router-view />
   <Footer v-if="route.meta.showHeaderFooter !== false" />
+
 </template>
 
 <style scoped>

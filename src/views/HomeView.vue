@@ -53,9 +53,9 @@
           <h3 class="text-xl mb-6 text-white">Getting Started</h3>
           <div class="space-y-6">
             <div class="space-y-4">
-              <div v-for="(step, index) in steps" :key="index" class="flex items-start text-gray-300">
+              <div v-for="(deposit, index) in deposit" :key="index" class="flex items-start text-gray-300">
                 <span class="font-bold mr-2">{{ index + 1 }}.</span>
-                {{ step }}
+                {{ deposit}}
               </div>
             </div>
             <a
@@ -242,9 +242,16 @@ export default {
 
     const steps = [
       "Create your Deriv trading account",
-      "Fund your account with your preferred method",
+      "Fund your account with m-pesa You can deposit directly from here fast and secure to you deriv account",
       "Select and download your trading bot",
       "Start automated trading with our setup guide"
+    ]
+    const deposit = [
+      "Create your Deriv trading account with EasyTransfer",
+      "Fund your account with m-pesa You can deposit directly from here fast and secure to you deriv account",
+      "Select and download your trading bot",
+      "Start automated trading with our setup guide",
+      "Within seconds the funds will reflect on your account"
     ]
 
     const robots = reactive([
@@ -384,6 +391,7 @@ export default {
       mainFeatures,
       steps,
       robots,
+      deposit,
       handlePurchase,
       processPayment,
       closePaymentModal

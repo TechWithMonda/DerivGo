@@ -51,13 +51,28 @@ const router = createRouter({
       component: () => import('../views/policy.vue'),
     },
     {
+      path: '/createaccount',
+      name: 'createaccount',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/createaccount.vue'),
+      meta: {
+        showHeaderFooter: false, // Hide the nav bar
+      },
+    },
+    {
       path: '/deposit',
       name: 'deposit',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/deposit.vue'),
-    }
+      meta: {
+        showHeaderFooter: false, // Hide the nav bar
+      },
+    },
+    
   ],
 })
 
