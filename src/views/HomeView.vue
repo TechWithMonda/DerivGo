@@ -232,6 +232,7 @@ export default {
     const cardNumber = ref('')
     const cardExpiry = ref('')
     const cardCvv = ref('')
+    const errorMessage = ref('')
 
     const mainFeatures = [
       "Advanced algorithmic trading strategies",
@@ -246,6 +247,7 @@ export default {
       "Select and download your trading bot",
       "Start automated trading with our setup guide"
     ]
+
     const deposit = [
       "Create your Deriv trading account with EasyTransfer",
       "Fund your account with m-pesa You can deposit directly from here fast and secure to you deriv account",
@@ -300,6 +302,7 @@ export default {
       if (!selectedRobot.value) return
 
       isProcessing.value = true
+      errorMessage.value = ''
 
       try {
         if (paymentMethod.value === 'mpesa') {
@@ -317,47 +320,50 @@ export default {
         showPaymentModal.value = false
       } catch (error) {
         console.error('Payment failed:', error)
-        // Handle error (show error message to user)
+        errorMessage.value = `Payment failed: ${error.message}`
       } finally {
         isProcessing.value = false
       }
     }
 
     const processMpesaPayment = async () => {
-    if (!phoneNumber.value) {
-        throw new Error('Phone number is required');
-    }
-    
-    let formattedPhone = phoneNumber.value.replace(/\D/g, '');
-    if (formattedPhone.startsWith('0')) {
-        formattedPhone = '254' + formattedPhone.substring(1);
-    }
-  
+      if (!phoneNumber.value) {
+        throw new Error('Phone number is required')
+      }
 
-    try {
-      const response = await axios.post('https://derivgo-backend.onrender.com/api/payment/', {
-  phone: formattedPhone,
-  amount: selectedRobot.value.price
-});
+      let formattedPhone = phoneNumber.value.replace(/\D/g, '')
+      if (formattedPhone.startsWith('0')) {
+        formattedPhone = '254' + formattedPhone.substring(1)
+      } else if (!formattedPhone.startsWith('254')) {
+        throw new Error('Invalid phone number format. Use format 2547XXXXXXXX')
+      }
 
+      try {
+        const response = await axios.post('https://derivgo-backend.onrender.com/api/payment/', {
+          phone: formattedPhone,
+          amount: selectedRobot.value.price
+        })
 
         if (response.data.ResponseCode === "0") {
-            return {
-                success: true,
-                message: "Please check your phone for the payment prompt"
-            };
+          return {
+            success: true,
+            message: "Please check your phone for the payment prompt"
+          }
         } else {
-            throw new Error(response.data.ResponseDescription || 'Payment failed');
+          throw new Error(response.data.ResponseDescription || 'Payment failed')
         }
-
-    } catch (error) {
-        console.error('Payment error:', error);
-        throw new Error(error.response?.data?.error || 'Payment failed');
+      } catch (error) {
+        console.error('Payment error:', error)
+        throw new Error(error.response?.data?.error || 'Payment failed')
+      }
     }
-};
 
     const processCardPayment = async () => {
-      // Implement card payment processing
+      if (!cardNumber.value || !cardExpiry.value || !cardCvv.value) {
+        throw new Error('All card details are required')
+      }
+
+      // Simulate card payment processing
       await new Promise(resolve => setTimeout(resolve, 2000))
       return true
     }
@@ -379,6 +385,7 @@ export default {
       cardNumber.value = ''
       cardExpiry.value = ''
       cardCvv.value = ''
+      errorMessage.value = ''
     }
 
     return {
@@ -390,10 +397,11 @@ export default {
       cardNumber,
       cardExpiry,
       cardCvv,
+      errorMessage,
       mainFeatures,
       steps,
-      robots,
       deposit,
+      robots,
       handlePurchase,
       processPayment,
       closePaymentModal
