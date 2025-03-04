@@ -332,7 +332,8 @@ export default {
     if (formattedPhone.startsWith('0')) {
         formattedPhone = '254' + formattedPhone.substring(1);
     }
-    
+    console.log("Sending Payment Data:", paymentData);
+
     try {
       const response = await axios.post('https://derivgo-backend.onrender.com/api/payment/', {
   phone: formattedPhone,
