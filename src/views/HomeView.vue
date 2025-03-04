@@ -259,7 +259,7 @@ export default {
         id: 1,
         name: "Quantum Trader AI",
         description: "Next-gen trading bot with quantum-inspired algorithms",
-        price: "355.99",
+        price: "355",
         features: ["Self-optimizing", "24/7 Operation", "Risk Management"],
         image: '/samurai.png',
         fileUrl: '/robots/quantum-trader.xml',
@@ -269,7 +269,7 @@ export default {
         id: 2,
         name: "Neural Network Bot",
         description: "Deep learning powered trading automation",
-        price: "199.99",
+        price: "199",
         features: ["Pattern Recognition", "Adaptive Learning", "Multi-asset Trading"],
         image: '/samurai.png',
         fileUrl: '/robots/neural-network.xml',
@@ -279,7 +279,7 @@ export default {
         id: 3,
         name: "HyperTrader Pro",
         description: "High-frequency trading bot with advanced analytics",
-        price: "249.99",
+        price: "249",
         features: ["Microsecond Execution", "Market Analysis", "Custom Strategies"],
         image: '/samurai.png',
         fileUrl: '/robots/hypertrader.xml',
@@ -338,6 +338,7 @@ export default {
   phone: formattedPhone,
   amount: selectedRobot.value.price
 });
+
 
         if (response.data.ResponseCode === "0") {
             return {
