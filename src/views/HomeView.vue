@@ -334,7 +334,7 @@ export default {
     }
     
     try {
-      const response = await axios.post('derivgo-backend.onrender.com/api/payment/', {
+      const response = await axios.post('https://derivgo-backend.onrender.com/api/payment/', {
   phone: formattedPhone,
   amount: selectedRobot.value.price
 });
