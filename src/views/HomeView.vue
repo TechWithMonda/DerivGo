@@ -49,6 +49,41 @@
             </a>
           </div>
         </div>
+        <!--gaming setup-->
+        <div class="bg-gray-800/50 border border-gray-700 backdrop-blur-sm rounded-xl p-6">
+          <h3 class="text-xl mb-6 text-white">Getting Started</h3>
+          <div class="space-y-6">
+            <img src="/virtual-trader-banner.svg
+            " alt="About Deriv" class="rounded-lg shadow-lg max-w-full" />  
+            <div class="space-y-4">
+              <div  class="flex items-start text-gray-300">
+                <span class="font-bold mr-2">Learn investing without risk! Start with $10,000 in virtual cash and trade real-world assets like Bitcoin, Ethereum, and Tesla Stock. Experience market dynamics, build investment skills, and have fun while becoming financially savvy.
+Key Features:
+
+Zero financial risk
+Real-time portfolio tracking
+Daily market simulations
+Instant buy/sell options
+Educational and entertaining
+
+Perfect for aspiring investors, students, and anyone curious about the financial world. Your investment journey begins here – no real money needed! 💸📈</span>
+                
+              </div>
+            </div>
+            <a
+              href="/virtualtradergames"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Play  A Free Game
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!--Ending gaming setup-->
         <div class="bg-gray-800/50 border border-gray-700 backdrop-blur-sm rounded-xl p-6">
           <h3 class="text-xl mb-6 text-white">Getting Started</h3>
           <div class="space-y-6">

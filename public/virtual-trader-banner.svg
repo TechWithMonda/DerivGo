@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" style="background-color: #f0f4f8;">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#4a90e2;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Stock Market Grid Lines -->
+  <g opacity="0.2">
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#4a90e2" stroke-dasharray="5,5"/>
+    <line x1="0" y1="266" x2="1200" y2="266" stroke="#4a90e2" stroke-dasharray="5,5"/>
+    <line x1="0" y1="133" x2="1200" y2="133" stroke="#4a90e2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Stylized Charts/Graphs -->
+  <g>
+    <!-- Bitcoin Line -->
+    <polyline 
+      points="0,300 200,250 400,280 600,200 800,240 1000,180 1200,220" 
+      fill="none" 
+      stroke="#FF6B6B" 
+      stroke-width="6"
+    />
+    
+    <!-- Ethereum Line -->
+    <polyline 
+      points="0,280 200,230 400,260 600,220 800,260 1000,210 1200,240" 
+      fill="none" 
+      stroke="#4ECDC4" 
+      stroke-width="6"
+    />
+    
+    <!-- Tesla Stock Line -->
+    <polyline 
+      points="0,260 200,210 400,240 600,190 800,230 1000,190 1200,220" 
+      fill="none" 
+      stroke="#A78ADB" 
+      stroke-width="6"
+    />
+  </g>
+  
+  <!-- Text Elements -->
+  <text 
+    x="600" 
+    y="100" 
+    text-anchor="middle" 
+    font-family="Arial, sans-serif" 
+    font-size="48" 
+    font-weight="bold" 
+    fill="#2C3E50"
+  >
+    Virtual Trader Game
+  </text>
+  
+  <text 
+    x="600" 
+    y="350" 
+    text-anchor="middle" 
+    font-family="Arial, sans-serif" 
+    font-size="24" 
+    fill="#34495E"
+  >
+    Trade. Invest. Learn.
+  </text>
+  
+  <!-- Small Icons -->
+  <g transform="translate(400, 50)">
+    <circle cx="0" cy="0" r="30" fill="#FF6B6B" opacity="0.7"/>
+    <text x="0" y="10" text-anchor="middle" fill="white" font-size="20">₿</text>
+  </g>
+  
+  <g transform="translate(500, 50)">
+    <circle cx="0" cy="0" r="30" fill="#4ECDC4" opacity="0.7"/>
+    <text x="0" y="10" text-anchor="middle" fill="white" font-size="20">Ξ</text>
+  </g>
+  
+  <g transform="translate(600, 50)">
+    <circle cx="0" cy="0" r="30" fill="#A78ADB" opacity="0.7"/>
+    <text x="0" y="10" text-anchor="middle" fill="white" font-size="20">T</text>
+  </g>
+</svg>
