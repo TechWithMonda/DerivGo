@@ -362,19 +362,15 @@ export default {
     }
 
     const processMpesaPayment = async () => {
-<<<<<<< HEAD
+
       if (!phoneNumber.value) {
         throw new Error('Phone number is required')
       }    if (!phoneNumber.value) {
         throw new Error('Phone number is required');
     }
     
-    let formattedPhone = phoneNumber.value.replace(/\D/g, '');
-    if (formattedPhone.startsWith('0')) {
-        formattedPhone = '254' + formattedPhone.substring(1);
-    }
+ 
    
-
 
       let formattedPhone = phoneNumber.value.replace(/\D/g, '')
       if (formattedPhone.startsWith('0')) {
